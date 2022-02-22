@@ -8,8 +8,11 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}.`);
 });
 
-app.get("/home/user/:firstname/:lastname", (req, res) => {
-    res.send(`Welcome ${req.params.firstname} ${req.params.lastname}`);
+app.get("/home/user/:name/:age", (req, res) => {
+    if (req.params.age <= 17)
+        res.send(`Hello ${req.params.name}, you're too young`);
+    else
+        res.send(`Welcome ${req.params.name}, you're ${req.params.age} years old`);
 });
 
 app.get("/home/fail/", (req, res) => {

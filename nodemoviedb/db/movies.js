@@ -78,6 +78,7 @@ const updateMovie = (req, res) => {
             return console.error('Error executing query', err.stack)
         }
     });
+    
     res.json(editedMovie);
 }
 
